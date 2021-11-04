@@ -2,19 +2,18 @@ extends layout
 
 block content
   h1= title
-   - var results = [{"count":"100", "type":Red,"size":small},{"count":"200","type":black,"size":medium},{"count":"300","type":pink,"size":big}]
-       div(class="container-fluid")
-         div(class="row")
-            each m,n in results
-              div(class="col-sm-2" onClick=`buy(${n})`)
-                p #{m.count}
-                p #{m.type}
-                p #{m.size}
-
+   - var results = [{"count":100, "type":"Red","size":"small"},{"count":200,"type":"black","size":"medium"},{"count":300,"type":"pink","size":"big"}]
+      div(class="container-fluid")
+       div(class="row")
+         each value,index in results
+            div(class="col-sm-2" onClick=`buy(${index})`)
+                p #{value.count}
+                p #{value.type}
+                p #{value.size}
 
                       script.
-                     function  buy(o){
+                         function  buy(o){
 
-                        alert(`You purchased item ${o+1}.`)
+                              alert(`You purchased item ${o+1}.`)
 
-                     }
+                         }
