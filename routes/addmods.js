@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('ant', { title: 'Search Results by Ant' });
+  let query = req.query 
+  console.log(`rows ${query.rows}`)
+  console.log(`cols ${query.cols}`)
+  res.render('addmods', { title: 'Addmods', query: query});
 });
 
 module.exports = router;
