@@ -2,4 +2,11 @@ extends layout
 
 block content
   h1= title
-  
+   - var results = [{"count":"100", "type":Red,"size":small},{"count":"200","type":black,"size":medium},{"count":"300","type":pink,"size":big}]
+       div(class="container-fluid")
+         div(class="row")
+            each value,index in results
+              div(class="col-sm-2" onClick=`buy(${index})`)
+                p #{value.color}
+                p #{value.quantity}
+                p #{value.cost}
